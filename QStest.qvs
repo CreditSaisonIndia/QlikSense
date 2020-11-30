@@ -1,0 +1,32 @@
+kyc:
+LOAD
+    applicant_id,
+    kyc_id,
+    issued_country, //    '' as Passport_number,
+    pan_card,
+    gstin
+FROM [lib://PII_data_folder/T1_shield_kyc.qvd](qvd);
+
+contact:
+LOAD
+    applicant_id,
+    contact_id,
+    country_code,
+    phone_type_code,
+    phone,
+    email,
+    email_type_code
+FROM [lib://PII_data_folder/T1_shield_contact.qvd](qvd);
+
+individual:
+LOAD
+    father_name,
+    first_name,
+    full_name,
+    gender,
+    dob,
+    applicant_id
+FROM [lib://PII_data_folder/T1_shield_individual.qvd](qvd);
+
+
+
